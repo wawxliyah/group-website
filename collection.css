@@ -1,0 +1,188 @@
+.video-wrapper {
+    width: 100%;
+    height: 450px;        /* landscape height */
+    overflow: hidden;
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* 🔥 key line */
+}
+
+/* SERIES */
+.section-title { 
+    text-align: center; 
+    font-size: 2.5rem; /* header size */ 
+    font-weight: 700; /* bold */ 
+    margin: 2rem 0 1rem 0; /* space above and below */ 
+    letter-spacing: 0.05em; 
+    color: #333; 
+    line-height: 1.2; 
+    animation: fadeIn 1.5s ease-in-out; 
+} 
+
+.section-subtitle { 
+    text-align: center; 
+    font-size: 1.2rem; /* smaller than header */ 
+    color: #666; /* lighter text for subtitle */ 
+    margin-bottom: 2rem; /* space before images */ 
+    max-width: 600px; /* limits width for readability */ 
+    margin-left: auto; 
+    margin-right: auto; /* center the paragraph */ 
+    line-height: 1.5; 
+    animation: fadeIn 1.5s ease-in-out; 
+} 
+
+@keyframes fadeIn { 
+    from { opacity: 0; transform: translateY(10px); } 
+    to { opacity: 1; transform: translateY(0); } 
+} 
+
+.image-row { 
+    display: flex; 
+    width: 100%; } 
+    
+.img-box { 
+    position: relative; 
+    width: 33.333%; 
+    overflow: hidden; 
+    text-decoration: none; 
+} 
+
+.img-box img { 
+    width: 100%; 
+    height: 400px; 
+    object-fit: cover; 
+    transition: transform 0.4s ease; 
+    display: block; 
+} 
+
+/* Overlay */    
+.overlay { 
+    position: absolute; 
+    inset: 0; 
+    background: rgba(0,0,0,0.2); 
+    color: #fff; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    opacity: 0; 
+    transition: opacity 0.4s ease; 
+} 
+
+.overlay h2 { 
+    font-size: 22px; 
+    letter-spacing: 2px; 
+    margin-bottom: 8px; 
+} 
+
+.overlay span { 
+    font-size: 14px; 
+    letter-spacing: 1px; 
+} 
+
+/* 🔥 Hover effect */ 
+.img-box:hover img { 
+    transform: scale(1.08); 
+} 
+
+.img-box:hover .overlay { 
+    opacity: 1; 
+}
+
+/* PRODUCT CARD */
+.product-card {
+    display: flex;
+    gap: 30px;
+    max-width: 900px;
+    margin: 60px auto;
+    background: #fff0f3;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(0,0,0,0.18);
+}
+
+/* LEFT IMAGE */
+.product-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-left img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 18px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.product-left:hover img {
+    transform: scale(1.06);
+}
+
+/* RIGHT DETAILS */
+.product-right {
+    flex: 1;
+    padding: 10px 0;
+}
+
+.product-right h1 {
+    font-size: 22px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+/* BUTTON BACK */
+.back {
+    margin-top: 20px;
+    background: none;
+    border: none;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .product-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .colors {
+        justify-content: center;
+    }
+
+    .add-cart {
+        max-width: 300px;
+        margin: 20px auto;
+    }
+}
+
+/* BUTTON */
+.buy-now-btn {
+    background-color: #f8fe9f; /* Yellow like navbar */
+    color: #000;               
+    font-weight: 700;           
+    padding: 12px 25px;         
+    border: none;               /* Remove default border */
+    border-radius: 8px;         
+    cursor: pointer;           
+    transition: all 0.3s ease; 
+    font-size: 16px;            
+}
+
+.buy-now-btn:hover {
+    background-color: #f8fe9f; 
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Add shadow on hover */
+}

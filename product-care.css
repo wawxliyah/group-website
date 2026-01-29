@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* PRODUCT HERO */
+.product-care-hero {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    min-height: 540px;
+    overflow: hidden;
+}
+
+.product-care-hero .hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s ease;
+}
+
+.product-care-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(40, 30, 20, 0.28);
+    z-index: 1;
+    transition: background 0.6s ease;
+}
+
+.product-care-hero:hover img {
+    transform: scale(1.06);
+}
+
+.product-care-hero:hover::after {
+    background: rgba(40, 30, 20, 0.38);
+}
+
+.product-care-hero .hero-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 80px;
+    z-index: 2;
+}
+
+.product-care-hero h1 {
+    color: #fff;
+    font-size: 72px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.product-care-hero p {
+    color: #f0f0f0;
+    font-size: 14px;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+/* PRODUCT GRID */
+.product-care {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 24px;
+}
+
+.product-care h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 15px;
+    color: #777;
+    max-width: 520px;
+    margin: 0 auto 60px;
+}
+
+.care-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px;
+}
+
+/* CARE CARD */
+.care-card {
+    background-color: #fafafa;
+    border: 1px solid #eaeaea;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.care-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* IMAGE & TITLE */
+.card-image {
+    display: block;
+    cursor: pointer;
+}
+
+.card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.care-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-title {
+    display: block;
+    padding: 16px 20px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #1d2951;
+    cursor: pointer;
+}
+
+/* TOGGLE CHECKBOX */
+.toggle {
+    display: none;
+}
+
+/* CARE LIST */
+.care-list {
+    list-style: none;
+    padding: 0 20px 20px 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.care-list li {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* SHOW LIST WHEN CHECKED */
+.care-card .toggle:checked ~ .care-list {
+    max-height: 500px;
+}
+
+.care-card .toggle:checked ~ .care-list li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* STAGGER ANIMATION */
+.care-card .toggle:checked ~ .care-list li:nth-child(1) { transition-delay: 0.1s; }
+.care-card .toggle:checked ~ .care-list li:nth-child(2) { transition-delay: 0.2s; }
+.care-card .toggle:checked ~ .care-list li:nth-child(3) { transition-delay: 0.3s; }
+.care-card .toggle:checked ~ .care-list li:nth-child(4) { transition-delay: 0.4s; }
+.care-card .toggle:checked ~ .care-list li:nth-child(5) { transition-delay: 0.5s; }
+.care-card .toggle:checked ~ .care-list li:nth-child(6) { transition-delay: 0.6s; }
+
+/* WRAPPER WITH BACKGROUND IMAGE */
+.care-background-wrapper {
+    position: relative;
+    background: url('images/header.jpg') center/cover no-repeat;
+    padding: 100px 0;  /* space around grid */
+}
+
+/* TRANSPARENT OVERLAY ON BACKGROUND */
+.care-background-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.6); /* adjust transparency: 0.6 = 60% white overlay */
+    z-index: 1;
+}
+
+/* CARE GRID ABOVE THE BACKGROUND */
+.care-background-wrapper .care-grid {
+    position: relative;
+    z-index: 2;  /* so cards appear above overlay */
+}
+
+.care-background-wrapper {
+    position: relative;
+    background: url('images/brikbag.webp') center/cover no-repeat;
+    padding: 90px 20px; /* jarak dalam supaya card tak melekat tepi */
+    border: 4px solid rgba(0, 0, 0, 0.6); /* border putih separa transparent */
+    border-radius: 20px; /* bulat sikit */
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 20px rgba(27, 25, 25, 0.1); /* optional */
+}
+
+/* TOP MARQUEE */
+.top-marquee {
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+    padding: 8px 0;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: scroll-left 20s linear infinite;
+}
+
+.marquee-track span {
+    font-family: "Playfair Display", "Times New Roman", serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #222;
+    padding-right: 80px;
+    white-space: nowrap;
+}
+
+/* Infinite scroll */
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* BOTTOM MEDIA SECTION */
+.bottom-media {
+    width: 100%;
+    margin-top: 80px;
+}
+
+/* Video */
+.video-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+/* Image under video */
+.bottom-image {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bottom-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}

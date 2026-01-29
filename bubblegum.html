@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Compact Pal - BRÏK Fashion</title>
+
+        <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="accessories.css">
+    </head>
+
+    <body>
+        <header class="navbar">
+  
+            <!-- LOGO -->
+            <div class="nav-logo">
+                <img src="image/logo.webp" class="logo" alt="Logo">
+            </div>
+
+            <!-- MENU -->
+            <nav class="nav-menu">
+                <a href="index.html">HOME</a>
+                <a href="collection.html">COLLECTION</a>
+                <a href="accessories.html">ACCESSORIES</a>
+                <a href="product-care.html">PRODUCT CARE</a>
+                <a href="gallery.html">GALLERY</a>
+                <a href="about.html">ABOUT US</a>
+                <a href="contact.html">CONTACT US</a>
+                <a href="review.html">REVIEW</a>
+            </nav>
+
+            <!-- ICONS -->
+            <div class="nav-icons">
+                <i class="far fa-grin-beam"></i>
+                <a href="contact.html" class="icon-link">
+                <i class="fas fa-phone"></i></a>
+            </div>
+        </header>
+
+        <!-- NOTIFICATION -->
+        <div id="notification" class="notification"></div>
+
+        <!-- PRODUCT DETAIL -->
+        <div class="product-detail-container">
+            <div class="product-image">
+                <img src="image/bubblegum.webp" alt="Compact Pal Bubblegum" class="flip-img" data-back="image/bubblegumback.png">
+            </div>
+            <div class="product-info">
+                <h2>Compact Pal - Bubblegum</h2>
+                <p class="price">RM 99</p>
+                <p class="description">
+                    Small, sleek, and made to go anywhere. The Compact Pal features a clean design with a fun Bubblegum is a finish lightweight, practical, and perfect compact pal for everyday use.
+                </p>
+                <button class="buy-now-btn" onclick="alert('Enjoy your Compact Pal in Bubblegum!')">Buy Now</button>
+            </div>
+        </div>
+
+        <!-- JAVASCRIPT -->
+        <script>
+
+        // IMAGE FLIP ON CLICK 
+        const flipImages = document.querySelectorAll('.flip-img');
+
+            flipImages.forEach(img => {
+            img.addEventListener('click', () => {
+            const backSrc = img.getAttribute('data-back');
+            const currentSrc = img.getAttribute('src');
+
+            // swap image
+            img.setAttribute('src', backSrc);
+            img.setAttribute('data-back', currentSrc);
+
+            // optional: add a little rotate effect
+            img.classList.add('flipped');
+            setTimeout(() => img.classList.remove('flipped'), 300);
+            });
+        });
+        </script>
+
+        <!-- FOOTER -->
+        <br clear="all">
+        <footer style="display:flex; justify-content:space-between; align-items:flex-start; padding:30px">
+            <div>
+                <img src="image/logo.webp" style="height:50px; margin-bottom:5px;">
+                <p>Persiaran KLCC LCC02,</p>
+                <p>Level Concourse Kuala Lumpur City Centre,</p>
+                <p>50088 Kuala Lumpur</p>
+            </div>
+            <div>
+                <h3>REACH US HERE</h3>
+                <button onclick="document.location ='https://www.instagram.com/by.brik/'">Instagram</button>
+                <button onclick="document.location ='https://www.tiktok.com/@by.brik'">TikTok</button>
+            </div>
+            <div>
+                <h3>MORE INFORMATION</h3>
+                <a href="about.html">About Us</a><br>
+                <a href="contact.html">Contact Us</a><br>
+                <a href="product_care.html">Product care</a>
+            </div>
+            <div>
+                <h3>HELPFUL LINKS</h3>
+                <a href="https://bybrik.com/pages/return-refund-exchange-policy">Return, refund & exchange policy</a><br>
+                <a href="https://bybrik.com/pages/shipping-information">Shipping & delivery</a><br>
+                <a href="https://bybrik.com/pages/terms-of-service">Terms of service</a><br>
+                <a href="https://bybrik.com/pages/privacy-policy">Privacy policy</a>
+            </div>
+        </footer>
+    </body>
+</html>

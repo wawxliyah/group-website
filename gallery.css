@@ -1,0 +1,40 @@
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  background-color: #F5EDE8; 
+  color: #4B3B2A; 
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: bold;
+
+  border: 2px solid #4B3B2A;
+  outline: none;
+
+  cursor: pointer;
+  display: none; 
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+#backToTop:hover {
+  background-color: #E8D8CE;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+@media (max-width: 768px) {
+  #backToTop {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+}
